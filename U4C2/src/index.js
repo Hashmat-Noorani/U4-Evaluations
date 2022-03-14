@@ -6,7 +6,6 @@ const masterController = require("./controllers/master.cont");
 const savingController = require("./controllers/saving.cont");
 const fixedController = require("./controllers/fixed.cont");
 
-
 const app = express();
 app.use(express.json());
 
