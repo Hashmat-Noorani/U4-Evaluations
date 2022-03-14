@@ -7,9 +7,16 @@ const masterSchema = new mongoose.Schema(
       ref: "user",
       required: true,
     },
-    //coc
-    // 622ef3f927d1e03f01578a2a
-    //
+    //cos
+    // 622ef3f927d1e03f01578a2a amir
+    // 622ef41f27d1e03f01578a2c hash
+    //emp
+    // 622ef45027d1e03f01578a2e umar
+    // 622ef47927d1e03f01578a30 tab
+    // branch
+    // 622ef51bbcbeaa1ddadbbcc8 jadeed
+    // 622ef534bcbeaa1ddadbbcca kb
+    // 622ef544bcbeaa1ddadbbccc tp
     relManId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "user",
@@ -20,7 +27,7 @@ const masterSchema = new mongoose.Schema(
       ref: "branch",
       required: true,
     },
-    bal: { type: Number, required: true },
+    balance: { type: Number, required: true },
   },
   {
     versionKey: false,
