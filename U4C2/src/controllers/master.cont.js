@@ -13,7 +13,7 @@ router.post("", async (req, res) => {
 
 router.get("", async (req, res) => {
   try {
-    const masters = await Master.find().lean().exec();
+    const masters = await Master.find().populate("userId").lean().exec();
     res.status(200).send(masters);
   } catch (err) {
     res.status(500).send({ error: err.message });

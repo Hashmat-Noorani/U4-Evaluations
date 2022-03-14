@@ -11,9 +11,14 @@ router.post("", async (req, res) => {
   }
 });
 
-router.get("", async (req, res) => {
+router.get("/:masterId", async (req, res) => {
   try {
-    const fixeds = await Fixed.find().lean().exec();
+    const fixeds = await Fixed.find(
+      { masterId: req.params.masterId },
+      { _id: 0, account_number: 1, balance: 1 }
+    )
+      .lean()
+      .exec();
     res.status(200).send(fixeds);
   } catch (err) {
     res.status(500).send({ error: err.message });
