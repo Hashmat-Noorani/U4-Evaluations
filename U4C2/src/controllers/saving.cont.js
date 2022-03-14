@@ -1,11 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const Saving = require("../models/saving.model");
-
+const Master = require("../models/master.model");
 router.post("", async (req, res) => {
   try {
     const saving = await Saving.create(req.body);
+    await Master.findOneAndUpdate(
+      { _id: saving.masterId },
+      { $inc: { balance: saving.balance } }
+    );
     res.status(201).send(saving);
+    console.log(saving.masterId);
   } catch (err) {
     res.status(500).send({ error: err.message });
   }

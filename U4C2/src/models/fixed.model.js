@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const fixedSchema = new mongoose.Schema(
   {
     masterId: {
-          // 622efa53f1fe7fd0f505e36f
-        // 622efa82f1fe7fd0f505e371
+        // 622f6de425b05a7f0ac51cad
+        // 622f6d6925b05a7f0ac51cab
       type: mongoose.Schema.Types.ObjectId,
       ref: "master",
       required: true,
