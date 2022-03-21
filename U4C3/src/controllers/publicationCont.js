@@ -5,8 +5,7 @@ const router = express.Router();
 
 router.post(
   "",
-  check("likes").isNumeric().withMessage("Invalid input"),
-  check("content").notEmpty().withMessage("content required"),
+  check("name").notEmpty().withMessage("Name required"),
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
