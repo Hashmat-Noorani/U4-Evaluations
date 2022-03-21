@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema(
     lastName: String,
     age: Number,
     email: String,
-    profileImages: String,
+    profileImages: [String],
     isAuthor: { type: Boolean, default: false },
   },
   {

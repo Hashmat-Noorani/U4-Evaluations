@@ -2,9 +2,10 @@ const mongoose = require("mongoose");
 
 const bookSchema = new mongoose.Schema(
   {
-    likes: { type: String, default: 0 },
+    likes: { type: Number, default: 0 },
     content: String,
-    userId: { type: mongoose.Schema.Types.ObjectId, ref: "publication" },
+    coverImage: [String],
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
     publicationId: { type: mongoose.Schema.Types.ObjectId, ref: "publication" },
   },
   {
